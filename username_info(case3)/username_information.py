@@ -2,12 +2,14 @@ import requests
 import json
 response = requests.get('https://jsonplaceholder.typicode.com/users')
 y=json.loads(response.text)
+print(y)
 username = input("enter username :")
-def search(username):
-    for p in y:
-        if {p['username']} == username:
-            return p
-            print(p)
-        else:
-            print("Username not found")
-search(username)
+val = None
+for i in y:
+        if i['username'] == username:
+            val = i
+
+print(str(val))
+
+
+
